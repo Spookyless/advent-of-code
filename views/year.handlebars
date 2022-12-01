@@ -1,0 +1,56 @@
+<style>
+    #days {
+        width: calc(4 * 120px + 3 * 16px);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+    #days a {
+        display: block;
+        width: 120px;
+        height: 120px;
+        margin-right: 16px;
+        background-color: #202020;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        cursor: pointer;
+        font-weight: 400;
+        transition: background-color 0.2s ease-out, color 0.2s ease-out;
+    }
+
+    #days a:hover {
+        color: #121212;
+        background-color: #f1c25a;
+    }
+
+    #days a:nth-child(4n) {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    #days a:nth-child(4n):last-child {
+        margin-bottom: 0;
+    }
+
+    #days a:nth-child(25) {
+        width: 100%;
+    }
+
+    p.error {
+        font-size: 24px;
+    }
+</style>
+
+<div id="days">
+    {{#if days.[0]}}
+    {{#each days}}
+    <a href="./{{this}}">{{this}}</a>
+    {{/each}}
+    {{else}}
+    <p class="error">No files</p>
+    {{/if}}
+</div>

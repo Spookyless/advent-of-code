@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Advent of Code</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+                "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+
+        a:is(:link, :visited, :hover, :active) {
+            text-decoration: inherit;
+            color: inherit;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: whitesmoke;
+        }
+
+        #container {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            max-width: 960px;
+        }
+
+        main {
+            height: calc(100% - 64px);
+            padding: 24px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        {{> nav year=year}}
+        <main>
+            {{{body}}}
+        </main>
+    </div>
+</body>
+
+</html>
