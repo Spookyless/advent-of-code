@@ -91,7 +91,9 @@ app.post("/:year/:day", async (req, res) => {
         return res.status(404).send(`File 'day${day}.js' does not exist`);
     }
 
-    const data = await import(requestedDay);
+    const cacheBustingModulePath = `${requestedDay}?update=${Date.now()}`;
+
+    const data = await import(cacheBustingModulePath);
     const resultBase = data.base(input);
     const resultExtra = data.extra(input);
 
